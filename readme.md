@@ -17,5 +17,5 @@ php artisan migrator
 
 ### Admin
 
-username: admin@user.com
-password: abc123
+- username: admin@user.com
+- password: abc123
