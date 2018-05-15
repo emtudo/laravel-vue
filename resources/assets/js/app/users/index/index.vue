@@ -75,7 +75,7 @@ export default {
     <div class="form-group row" v-for="user in users" :key="user.id">
       <div class="col-md-3">{{ user.name }}</div>
       <div class="col-md-4">{{ user.email }}</div>
-      <div class="col-md-2">{{ user._parsed.status }}</div>
+      <div class="col-md-2">{{ user | get('_parsed.status', null) }}</div>
       <div class="col-md-3">
         <router-link class="btn btn-sm btn-success" :to="{ name: 'users.edit', params: {id: user.id} }"><i class="fa fa-edit"></i></router-link>
         <a v-if="user.id !== currentUser.id && !user.deleted_at" @click.prevent="doSuspend(user)" title="Suspender" class="btn btn-sm btn-warning" href="#"><i class="fa fa-ban"></i></a>
