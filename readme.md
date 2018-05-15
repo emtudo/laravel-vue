@@ -15,7 +15,19 @@ Configure the `.env` file after configuring run the command below to create the 
 php artisan migrator
 ```
 
-### Admin
+## How to test
+
+At the first terminal
+```shell
+php artisan serve
+```
+
+At the second terminal
+```shell
+npm run dev
+```
+
+## Admin
 
 - username: admin@user.com
 - password: abc123
