@@ -1,6 +1,10 @@
 # Skeleton Laravel With Vuejs
 
+
 ## How to install
+
+[How to install video In Portugues](https://www.youtube.com/watch?v=Vk-uuq3uuPI)
+
 
 ```shell
 composer create-project emtudo/laravel-vue
