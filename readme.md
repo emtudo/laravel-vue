@@ -1,6 +1,6 @@
 # Skeleton Laravel With Vuejs
 
-## Dependency
+## Dependencies
   - php 7.2
   - mysql 5.7
   - npm
