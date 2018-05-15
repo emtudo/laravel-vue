@@ -31,7 +31,6 @@ export default {
     this.mounted = true
   },
   updated () {
-    console.log('update', this.value)
     this.user = this.value
   },
   props: {
