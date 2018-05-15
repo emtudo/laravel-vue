@@ -52,7 +52,6 @@ export default {
       }
       this.saveUser(this.user)
         .then((data) => {
-          console.log('save???')
           if (this.currentUser.id === this.user.id) {
             this.updateUserData(data)
           }
