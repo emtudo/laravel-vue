@@ -1,0 +1,36 @@
+###################################################
+### OVERRIDE DEFAULT DOCKER-COMPOSE CONFIG FILE ###
+### SERVICES CAN BE REMOVED IF YOU NOT CHANGING ###
+###################################################
+
+# CONFIG
+version: '2'
+
+# SERVICES
+services:
+  # APP
+  app:
+    ports:
+      - 80:8080
+      - 443:8083
+
+  # MAILCATCHER
+  mailcatcher:
+    ports:
+      - 2025:1025
+      - 2080:1080
+
+  # MYSQL
+  mysql:
+    ports:
+      - 4306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=emtudo
+      - MYSQL_DATABASE=emtudo
+      - MYSQL_USER=emtudo
+      - MYSQL_PASSWORD=emtudo
+
+  # REDIS
+   cache:
+     ports:
+       - 7379:6379

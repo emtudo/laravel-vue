@@ -1,0 +1,105 @@
+###############################################
+### DO NOT CHANGE THIS FILE DIRECTLY        ###
+### USE docker-compose.override.yml instead ###
+###############################################
+
+# CONFIG
+version: '2'
+
+# VOLUMES
+volumes:
+  # MYSQL
+  emtudo-skeleton-mysql-data:
+    driver: local
+  # REDIS
+  emtudo-skeleton-redis-data:
+    driver: local
+  # ~/.config
+  emtudo-skeleton-temp-config:
+    driver: local
+  # ~/.local
+  emtudo-skeleton-temp-local:
+    driver: local
+  # ~/.cache
+  emtudo-skeleton-temp-cache:
+    driver: local
+  # ~/.composer
+  emtudo-skeleton-temp-composer:
+    driver: local
+
+# SERVICES
+services:
+  # APP
+  app:
+    image: ambientum/php:7.2-nginx
+    container_name: emtudo-skeleton-app
+    environment:
+      - XDEBUG_ENABLED=true
+      - PHP_IDE_CONFIG=serverName=ambientum
+    volumes:
+      - .:/var/www/app
+      - emtudo-skeleton-temp-config:/home/ambientum/.config
+      - emtudo-skeleton-temp-cache:/home/ambientum/.cache
+      - emtudo-skeleton-temp-local:/home/ambientum/.local
+      - emtudo-skeleton-temp-composer:/home/ambientum/.composer
+    links:
+      - mysql
+      - cache
+      - mailcatcher
+    ports:
+      - 8000:8080
+      - 8443:8083
+
+  # vue:
+  #   image: ambientum/node:9
+  #   container_name: emtudo-skeleton-vue-dev
+  #   command: bash -c "npm install; npm run watch"
+  #   volumes:
+  #     - .:/var/www/app
+
+  # QUEUE
+  queue:
+    image: ambientum/php:7.2
+    container_name: emtudo-skeleton-queue
+    command: php artisan queue:listen --tries=3
+    volumes:
+    - .:/var/www/app
+    - emtudo-skeleton-temp-config:/home/ambientum/.config
+    - emtudo-skeleton-temp-cache:/home/ambientum/.cache
+    - emtudo-skeleton-temp-local:/home/ambientum/.local
+    - emtudo-skeleton-temp-composer:/home/ambientum/.composer
+    links:
+      - mysql
+      - cache
+      - mailcatcher
+
+  # MAILCATCHER
+  mailcatcher:
+    image:  ambientum/mailcatcher:latest
+    container_name: emtudo-skeleton-mailcatcher
+    ports:
+      - 1025:1025
+      - 1080:1080
+
+  # MYSQL
+  mysql:
+    image: ambientum/mysql:5.7
+    container_name: emtudo-skeleton-mysql
+    volumes:
+      - emtudo-skeleton-mysql-data:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=emtudo
+      - MYSQL_DATABASE=skeleton
+      - MYSQL_USER=emtudo
+      - MYSQL_PASSWORD=emtudo
+
+  cache:
+    image: redis:4.0
+    container_name: emtudo-skeleton-redis
+    command: --appendonly yes
+    volumes:
+      - emtudo-skeleton-redis-data:/data
+    ports:
+      - 6379

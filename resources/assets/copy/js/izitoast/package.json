@@ -1,0 +1,91 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "izitoast",
+        "scope": null,
+        "escapedName": "izitoast",
+        "name": "izitoast",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/second/home/leandro/www/result.systems/spa"
+    ]
+  ],
+  "_from": "izitoast@latest",
+  "_id": "izitoast@1.0.2-c",
+  "_inCache": true,
+  "_location": "/izitoast",
+  "_nodeVersion": "4.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/izitoast-1.0.2-c.tgz_1480810506962_0.5749450342264026"
+  },
+  "_npmUser": {
+    "name": "dolce",
+    "email": "dolcemarcelo@gmail.com"
+  },
+  "_npmVersion": "2.14.2",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "izitoast",
+    "scope": null,
+    "escapedName": "izitoast",
+    "name": "izitoast",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/izitoast/-/izitoast-1.0.2-c.tgz",
+  "_shasum": "493cf0ead2eae7a10097ed2e9b9bf9cd2ab22cda",
+  "_shrinkwrap": null,
+  "_spec": "izitoast",
+  "_where": "/second/home/leandro/www/result.systems/spa",
+  "author": {
+    "name": "Marcelo Dolce",
+    "email": "dolcemarcelo@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/dolce/iziToast/issues"
+  },
+  "dependencies": {},
+  "description": "Elegant, responsive, flexible and lightweight notification plugin with no dependencies.",
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "493cf0ead2eae7a10097ed2e9b9bf9cd2ab22cda",
+    "tarball": "https://registry.npmjs.org/izitoast/-/izitoast-1.0.2-c.tgz"
+  },
+  "gitHead": "d81554e6ff4c835c634aa061318bfce79fb6692b",
+  "homepage": "https://github.com/dolce/iziToast#readme",
+  "keywords": [
+    "izitoast",
+    "notification",
+    "toaster",
+    "alert",
+    "confirm",
+    "js"
+  ],
+  "license": "Apache-2.0",
+  "main": "dist/js/iziToast.js",
+  "maintainers": [
+    {
+      "name": "dolce",
+      "email": "dolcemarcelo@gmail.com"
+    }
+  ],
+  "name": "izitoast",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dolce/iziToast.git"
+  },
+  "scripts": {},
+  "version": "1.0.2-c"
+}
