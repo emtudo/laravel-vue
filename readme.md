@@ -1,5 +1,10 @@
 # Skeleton Laravel With Vuejs
 
+## Dependency
+  - php 7.2
+  - mysql 5.7
+  - npm
+  - composer
 
 ## How to install
 
