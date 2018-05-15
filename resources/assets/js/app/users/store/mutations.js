@@ -47,8 +47,8 @@ export default {
   updateUser (state, user) {
     const current = find(state.users, {id: user.id})
     if (current) {
-      return updateUser(state, user, current)
+      return updateUser(state, prepareShow(user), current)
     }
-    return addUser(state, user)
+    return addUser(state, prepareShow(user))
   }
 }
