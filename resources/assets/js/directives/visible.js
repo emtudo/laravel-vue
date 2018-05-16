@@ -1,9 +1,15 @@
+import { isExecute } from './helpers'
+
 /**
- * Bind visible / invisible style into an element.
+ * Bind display style into an element (block/none).
  *
  * @param el
  * @param binding
  */
 export default (el, binding) => {
-  el.style.visibility = binding.value ? 'visible' : 'hidden'
+  const value = isExecute(el, binding)
+
+  const visible = value ? 'visible' : 'hidden'
+
+  el.style.visibility = visible
 }
