@@ -1,7 +1,7 @@
 {
-    "name": "emtudo/contacts",
-    "description": "Contacts",
-    "keywords": ["contacts", "laravel", "vue"],
+    "name": "emtudo/laravel-vue",
+    "description": "Skeleton Laravel with Vue",
+    "keywords": ["skeleton", "laravel", "vue", "vuejs"],
     "license": "MIT",
     "type": "project",
     "require": {
